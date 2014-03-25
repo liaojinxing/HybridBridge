@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C751765618E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
+		C751765B18E1717A005E248A /* HybridBridge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C751765A18E1717A005E248A /* HybridBridge.h */; };
+		C751765D18E1717A005E248A /* HybridBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C751765C18E1717A005E248A /* HybridBridge.m */; };
+		C751766418E1717A005E248A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751766318E1717A005E248A /* XCTest.framework */; };
+		C751766518E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
+		C751766718E1717A005E248A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751766618E1717A005E248A /* UIKit.framework */; };
+		C751766A18E1717A005E248A /* libHybridBridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765218E1717A005E248A /* libHybridBridge.a */; };
+		C751767018E1717A005E248A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C751766E18E1717A005E248A /* InfoPlist.strings */; };
+		C751767218E1717A005E248A /* HybridBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C751767118E1717A005E248A /* HybridBridgeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C751766818E1717A005E248A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C751764A18E1717A005E248A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C751765118E1717A005E248A;
+			remoteInfo = HybridBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C751765018E1717A005E248A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				C751765B18E1717A005E248A /* HybridBridge.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C751765218E1717A005E248A /* libHybridBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHybridBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C751765518E1717A005E248A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C751765918E1717A005E248A /* HybridBridge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HybridBridge-Prefix.pch"; sourceTree = "<group>"; };
+		C751765A18E1717A005E248A /* HybridBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HybridBridge.h; sourceTree = "<group>"; };
+		C751765C18E1717A005E248A /* HybridBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridBridge.m; sourceTree = "<group>"; };
+		C751766218E1717A005E248A /* HybridBridgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HybridBridgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C751766318E1717A005E248A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C751766618E1717A005E248A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C751766D18E1717A005E248A /* HybridBridgeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HybridBridgeTests-Info.plist"; sourceTree = "<group>"; };
+		C751766F18E1717A005E248A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C751767118E1717A005E248A /* HybridBridgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridBridgeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C751764F18E1717A005E248A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C751765618E1717A005E248A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C751765F18E1717A005E248A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C751766418E1717A005E248A /* XCTest.framework in Frameworks */,
+				C751766718E1717A005E248A /* UIKit.framework in Frameworks */,
+				C751766A18E1717A005E248A /* libHybridBridge.a in Frameworks */,
+				C751766518E1717A005E248A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C751764918E1717A005E248A = {
+			isa = PBXGroup;
+			children = (
+				C751765718E1717A005E248A /* HybridBridge */,
+				C751766B18E1717A005E248A /* HybridBridgeTests */,
+				C751765418E1717A005E248A /* Frameworks */,
+				C751765318E1717A005E248A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C751765318E1717A005E248A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C751765218E1717A005E248A /* libHybridBridge.a */,
+				C751766218E1717A005E248A /* HybridBridgeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C751765418E1717A005E248A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C751765518E1717A005E248A /* Foundation.framework */,
+				C751766318E1717A005E248A /* XCTest.framework */,
+				C751766618E1717A005E248A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C751765718E1717A005E248A /* HybridBridge */ = {
+			isa = PBXGroup;
+			children = (
+				C751765A18E1717A005E248A /* HybridBridge.h */,
+				C751765C18E1717A005E248A /* HybridBridge.m */,
+				C751765818E1717A005E248A /* Supporting Files */,
+			);
+			path = HybridBridge;
+			sourceTree = "<group>";
+		};
+		C751765818E1717A005E248A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C751765918E1717A005E248A /* HybridBridge-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C751766B18E1717A005E248A /* HybridBridgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C751767118E1717A005E248A /* HybridBridgeTests.m */,
+				C751766C18E1717A005E248A /* Supporting Files */,
+			);
+			path = HybridBridgeTests;
+			sourceTree = "<group>";
+		};
+		C751766C18E1717A005E248A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C751766D18E1717A005E248A /* HybridBridgeTests-Info.plist */,
+				C751766E18E1717A005E248A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C751765118E1717A005E248A /* HybridBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C751767518E1717A005E248A /* Build configuration list for PBXNativeTarget "HybridBridge" */;
+			buildPhases = (
+				C751764E18E1717A005E248A /* Sources */,
+				C751764F18E1717A005E248A /* Frameworks */,
+				C751765018E1717A005E248A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HybridBridge;
+			productName = HybridBridge;
+			productReference = C751765218E1717A005E248A /* libHybridBridge.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C751766118E1717A005E248A /* HybridBridgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C751767818E1717A005E248A /* Build configuration list for PBXNativeTarget "HybridBridgeTests" */;
+			buildPhases = (
+				C751765E18E1717A005E248A /* Sources */,
+				C751765F18E1717A005E248A /* Frameworks */,
+				C751766018E1717A005E248A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C751766918E1717A005E248A /* PBXTargetDependency */,
+			);
+			name = HybridBridgeTests;
+			productName = HybridBridgeTests;
+			productReference = C751766218E1717A005E248A /* HybridBridgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C751764A18E1717A005E248A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = douban;
+			};
+			buildConfigurationList = C751764D18E1717A005E248A /* Build configuration list for PBXProject "HybridBridge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C751764918E1717A005E248A;
+			productRefGroup = C751765318E1717A005E248A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C751765118E1717A005E248A /* HybridBridge */,
+				C751766118E1717A005E248A /* HybridBridgeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C751766018E1717A005E248A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C751767018E1717A005E248A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C751764E18E1717A005E248A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C751765D18E1717A005E248A /* HybridBridge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C751765E18E1717A005E248A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C751767218E1717A005E248A /* HybridBridgeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C751766918E1717A005E248A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C751765118E1717A005E248A /* HybridBridge */;
+			targetProxy = C751766818E1717A005E248A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C751766E18E1717A005E248A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C751766F18E1717A005E248A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C751767318E1717A005E248A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C751767418E1717A005E248A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C751767618E1717A005E248A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HybridBridge.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HybridBridge/HybridBridge-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C751767718E1717A005E248A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HybridBridge.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HybridBridge/HybridBridge-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C751767918E1717A005E248A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HybridBridge/HybridBridge-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HybridBridgeTests/HybridBridgeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C751767A18E1717A005E248A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HybridBridge/HybridBridge-Prefix.pch";
+				INFOPLIST_FILE = "HybridBridgeTests/HybridBridgeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C751764D18E1717A005E248A /* Build configuration list for PBXProject "HybridBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C751767318E1717A005E248A /* Debug */,
+				C751767418E1717A005E248A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C751767518E1717A005E248A /* Build configuration list for PBXNativeTarget "HybridBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C751767618E1717A005E248A /* Debug */,
+				C751767718E1717A005E248A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C751767818E1717A005E248A /* Build configuration list for PBXNativeTarget "HybridBridgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C751767918E1717A005E248A /* Debug */,
+				C751767A18E1717A005E248A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C751764A18E1717A005E248A /* Project object */;
+}
