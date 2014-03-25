@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/movie.css">
+    <script src="../js/myScript.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.11.0.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <section id="movie-brief-section" class="movie-brief-section">
+    <script id="Tpl-movie-header" type="text/template">
+        <div class="clearfix">
+            <div class="movie-poster">
+                <img src="{{ movie.images.medium }}" width="92">
+            </div>
+            <div class="movie-info">
+                <h1 class="movie-name">{{ movie.title }}</h1>
+                <p>
+                    <span class="rating-stars" data-rating="50.0">
+                        <span class="rating-star rating-star-medium-full"></span>
+                        <span class="rating-star rating-star-medium-full"></span>
+                        <span class="rating-star rating-star-medium-half"></span>
+                        <span class="rating-star rating-star-medium-gray"></span>
+                        <span class="rating-star rating-star-medium-gray"></span>
+                    </span>
+                    <span class="rating-num" id="rating-num">{{ movie.rating.average }}</span>
+                    <span class="rating-count" id="ratings-count">{{ movie.ratings_count }}人评价</span>
+                </p>
+                <p>{{ movie.pubdate }} / {{ movie.durations[0] }}</p>
+                <p>
+                    <span>{{ movie.countries[0] }} / {{ movie.countries[1] }}</span>
+                    <br>
+                    <span>{{ movie.genres[0] }} / {{ movie.genres[1] }}</span>
+                    <br>
+                </p>
+                <p>
+                    <button class="ticket-btn" onclick="purchase()">选座购票</button>
+                </p>
+            </div>
+        </div>
+    </script>
+    </section>
+
+    <section class="movie-action-section">
+        <button class="action-btn" onclick="wish()">想看</button><button class="action-btn" onclick="collect()">看过了</button>
+    </section>
+
+    <section id="movie-detail-section" class="movie-detail-section">
+    <script id="Tpl-movie-detail-section" type="text/template">
+        <div class="comment-table">
+            {{ if (movie.photos.length > 0) { }}
+                <ul class="stills clearfix">
+                    {{ for (var i = 0, length = movie.photos.length < 4 ? movie.photos.length : 4, photo; i < length; i++) { }}
+                        {{ if (photo = movie.photos[i]) { }}
+                            {{ if (i == 0) { }}
+                                <li class="still-image" style="margin-left: 10px;">
+                                    <img width="50" src="{{ photo.cover }}">
+                                </li>
+                            {{ } else { }}
+                                <li class="still-image">
+                                    <img width="50" src="{{ photo.cover }}">
+                                </li>
+                            {{ } }}
+                        {{ } }}
+                    {{ } }}
+                    <li class="still-image-num">{{ movie.photos_count }}</li>
+                </ul>
+            {{ } }}
+            <div class="movie-abstract">
+                {{ movie.summary }}
+            </div>
+            <ul class="actors">
+            {{ if (movie.directors.length > 0) { }}
+                {{ for (var i = 0; i < movie.directors.length; i++) { }}
+                    {{ if (director = movie.directors[i]) { }}
+                        <li class="actor-info clearfix">
+                            <div class="actor-avatar">
+                                <img width="50" src="{{ director.avatars.small }}">
+                            </div>
+                            <div class="actor-name">
+                                <p class="actor-name-zh">
+                                    {{ director.name }}[导演]
+                                </p>
+                                <p class="actor-name-en">
+                                    {{ director.name_en }}
+                                </p>
+                            </div>
+                        </li>
+                    {{ } }}
+                {{ } }}
+            {{ } }}
+            {{ if (movie.casts.length > 0) { }}
+                {{ for (var i = 0, actor; i < movie.casts.length; i++) { }}
+                    {{ if (actor = movie.casts[i]) { }}
+                        <li class="actor-info clearfix">
+                            <div class="actor-avatar">
+                                <img width="50" src="{{ actor.avatars.small }}">
+                            </div>
+                            <div class="actor-name">
+                                <p class="actor-name-zh">
+                                    {{ actor.name }}
+                                </p>
+                                <p class="actor-name-en">
+                                    {{ actor.name_en }}
+                                </p>
+                            </div>
+                        </li>
+                    {{ } }}
+                {{ } }}
+            {{ } }}
+            </ul>
+        </div>
+    </script>
+    </section>
+    <button type='button' class='action-btn' onclick='bridge.postMessage("test", "hello from js")'>post</button>
+    <button type='button' class='action-btn' onclick='bridge.receiveMessage("test", testReceiveMessage)'>receive</button>
+    <button type='button' class='action-btn' onclick='bridge.sendMessage("test", "hello from js", testReceiveMessage)'>send</button>
+
+    <script type="text/javascript">
+        var url = "movie"
+        function getJsonCallback(json) {
+            movie = JSON.parse(json);
+            renderTemplate();
+        }
+        bridge.getJson(url, getJsonCallback)
+    
+        function testReceiveMessage(response) {
+            alert(response)
+        }
+        
+        function responseDataToObjc(message) {
+            return message + "to objc";
+        }
+
+    </script>
+
+</body>
+</html>

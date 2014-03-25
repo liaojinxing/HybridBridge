@@ -7,16 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "WebBridgeAPI.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  // Override point for customization after application launch.
+  self.window.backgroundColor = [UIColor whiteColor];
+  [self.window makeKeyAndVisible];
+
+  MainViewController *controller = [[MainViewController alloc] init];
+  self.window.rootViewController = controller;
+
+  [WebBridgeAPI setAPIBaseURL:@"http://doubandev2.intra.douban.com:9809"];
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -27,7 +34,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
   // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
