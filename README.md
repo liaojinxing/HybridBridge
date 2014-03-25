@@ -56,7 +56,6 @@ And now you can communicate between js and objc.
 
 ```
 bridge.sendMessage(eventType, message, callbackFunction)
-
 ```
     
 - Send message from objc to js:
