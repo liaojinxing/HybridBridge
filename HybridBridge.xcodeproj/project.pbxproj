@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16D1A760CDD5403D94AB6A7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 915FBECD53814317808FAA4D /* libPods.a */; };
 		C751765618E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
 		C751766418E1717A005E248A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751766318E1717A005E248A /* XCTest.framework */; };
 		C751766518E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		915FBECD53814317808FAA4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C751765218E1717A005E248A /* libHybridBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHybridBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C751765518E1717A005E248A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C751765918E1717A005E248A /* HybridBridge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HybridBridge-Prefix.pch"; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		C751769318E17329005E248A /* WebBridgeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBridgeAPI.m; sourceTree = "<group>"; };
 		C751769518E17329005E248A /* VersionControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionControl.h; sourceTree = "<group>"; };
 		C751769618E17329005E248A /* VersionControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionControl.m; sourceTree = "<group>"; };
+		DA81B21ABCB74C948817E674 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C751765618E1717A005E248A /* Foundation.framework in Frameworks */,
+				16D1A760CDD5403D94AB6A7B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,7 @@
 				C751766B18E1717A005E248A /* HybridBridgeTests */,
 				C751765418E1717A005E248A /* Frameworks */,
 				C751765318E1717A005E248A /* Products */,
+				DA81B21ABCB74C948817E674 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +120,7 @@
 				C751765518E1717A005E248A /* Foundation.framework */,
 				C751766318E1717A005E248A /* XCTest.framework */,
 				C751766618E1717A005E248A /* UIKit.framework */,
+				915FBECD53814317808FAA4D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C751767518E1717A005E248A /* Build configuration list for PBXNativeTarget "HybridBridge" */;
 			buildPhases = (
+				9E896DF027D542CA8A02CCD7 /* Check Pods Manifest.lock */,
 				C751764E18E1717A005E248A /* Sources */,
 				C751764F18E1717A005E248A /* Frameworks */,
 				C751765018E1717A005E248A /* CopyFiles */,
+				E9EE87A8A089453AAB9EC0AD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,6 +288,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E896DF027D542CA8A02CCD7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E9EE87A8A089453AAB9EC0AD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C751764E18E1717A005E248A /* Sources */ = {
@@ -394,11 +435,12 @@
 		};
 		C751767618E1717A005E248A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA81B21ABCB74C948817E674 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/HybridBridge.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HybridBridge/HybridBridge-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -406,11 +448,12 @@
 		};
 		C751767718E1717A005E248A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA81B21ABCB74C948817E674 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/HybridBridge.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HybridBridge/HybridBridge-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -471,6 +514,7 @@
 				C751767718E1717A005E248A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C751767818E1717A005E248A /* Build configuration list for PBXNativeTarget "HybridBridgeTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +523,7 @@
 				C751767A18E1717A005E248A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
