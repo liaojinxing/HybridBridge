@@ -8,7 +8,7 @@
 
 #import "ResourceManager.h"
 #import "SSZipArchive.h"
-#import "AppConstant.h"
+#import "WebBridgeAPI.h"
 
 @implementation ResourceManager
 
@@ -26,7 +26,7 @@
 - (NSString *)resourceURL
 {
   if (!_resourceURL) {
-    return [NSString stringWithFormat:@"%@/web.zip", kBaseURL];
+    return [NSString stringWithFormat:@"%@/web.zip", [WebBridgeAPI APIBaseURL]];
   }
   return _resourceURL;
 }

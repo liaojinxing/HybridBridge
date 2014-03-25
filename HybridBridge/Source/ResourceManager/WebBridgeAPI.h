@@ -21,5 +21,6 @@
                         fail:(void (^)(NSError *error))failed;
 
 + (void)setAPIBaseURL:(NSString *)URL;
++ (NSString *)APIBaseURL;
 
 @end

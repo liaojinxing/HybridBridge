@@ -27,6 +27,11 @@ static NSString *baseURL = nil;
   baseURL = URL;
 }
 
++ (NSString *)APIBaseURL
+{
+  return baseURL;
+}
+
 + (void)hasResourceUpdateSuccess:(void (^)(VersionControl *versionControl))successBlock
                             fail:(void (^)(NSError *error))failed
 {

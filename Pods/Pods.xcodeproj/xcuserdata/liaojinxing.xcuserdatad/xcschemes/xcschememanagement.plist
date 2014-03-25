@@ -26,6 +26,27 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>27F74DB0B7A843B78D2441EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAD3978F9C784EA29AA8CD67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B93758427A4241D8B286F437</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DACD1A9A2FA14F07ABC3329C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
