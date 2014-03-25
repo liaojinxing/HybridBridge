@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		C751765618E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
-		C751765B18E1717A005E248A /* HybridBridge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C751765A18E1717A005E248A /* HybridBridge.h */; };
-		C751765D18E1717A005E248A /* HybridBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C751765C18E1717A005E248A /* HybridBridge.m */; };
 		C751766418E1717A005E248A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751766318E1717A005E248A /* XCTest.framework */; };
 		C751766518E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
 		C751766718E1717A005E248A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751766618E1717A005E248A /* UIKit.framework */; };
 		C751766A18E1717A005E248A /* libHybridBridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765218E1717A005E248A /* libHybridBridge.a */; };
 		C751767018E1717A005E248A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C751766E18E1717A005E248A /* InfoPlist.strings */; };
 		C751767218E1717A005E248A /* HybridBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C751767118E1717A005E248A /* HybridBridgeTests.m */; };
+		C751769718E17329005E248A /* BridgeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C751768918E17329005E248A /* BridgeWebViewController.m */; };
+		C751769818E17329005E248A /* UIWebView+JavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C751768E18E17329005E248A /* UIWebView+JavaScriptContext.m */; };
+		C751769918E17329005E248A /* ResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C751769118E17329005E248A /* ResourceManager.m */; };
+		C751769A18E17329005E248A /* WebBridgeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C751769318E17329005E248A /* WebBridgeAPI.m */; };
+		C751769B18E17329005E248A /* VersionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C751769618E17329005E248A /* VersionControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				C751765B18E1717A005E248A /* HybridBridge.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,14 +47,24 @@
 		C751765218E1717A005E248A /* libHybridBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHybridBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C751765518E1717A005E248A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C751765918E1717A005E248A /* HybridBridge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HybridBridge-Prefix.pch"; sourceTree = "<group>"; };
-		C751765A18E1717A005E248A /* HybridBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HybridBridge.h; sourceTree = "<group>"; };
-		C751765C18E1717A005E248A /* HybridBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridBridge.m; sourceTree = "<group>"; };
 		C751766218E1717A005E248A /* HybridBridgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HybridBridgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C751766318E1717A005E248A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C751766618E1717A005E248A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C751766D18E1717A005E248A /* HybridBridgeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HybridBridgeTests-Info.plist"; sourceTree = "<group>"; };
 		C751766F18E1717A005E248A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C751767118E1717A005E248A /* HybridBridgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HybridBridgeTests.m; sourceTree = "<group>"; };
+		C751768818E17329005E248A /* BridgeWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeWebViewController.h; sourceTree = "<group>"; };
+		C751768918E17329005E248A /* BridgeWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeWebViewController.m; sourceTree = "<group>"; };
+		C751768A18E17329005E248A /* JSCBridgeExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCBridgeExport.h; sourceTree = "<group>"; };
+		C751768B18E17329005E248A /* JSCResponseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCResponseDelegate.h; sourceTree = "<group>"; };
+		C751768D18E17329005E248A /* UIWebView+JavaScriptContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JavaScriptContext.h"; sourceTree = "<group>"; };
+		C751768E18E17329005E248A /* UIWebView+JavaScriptContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JavaScriptContext.m"; sourceTree = "<group>"; };
+		C751769018E17329005E248A /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		C751769118E17329005E248A /* ResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceManager.m; sourceTree = "<group>"; };
+		C751769218E17329005E248A /* WebBridgeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBridgeAPI.h; sourceTree = "<group>"; };
+		C751769318E17329005E248A /* WebBridgeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBridgeAPI.m; sourceTree = "<group>"; };
+		C751769518E17329005E248A /* VersionControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionControl.h; sourceTree = "<group>"; };
+		C751769618E17329005E248A /* VersionControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +122,7 @@
 		C751765718E1717A005E248A /* HybridBridge */ = {
 			isa = PBXGroup;
 			children = (
-				C751765A18E1717A005E248A /* HybridBridge.h */,
-				C751765C18E1717A005E248A /* HybridBridge.m */,
+				C751768618E17329005E248A /* Source */,
 				C751765818E1717A005E248A /* Supporting Files */,
 			);
 			path = HybridBridge;
@@ -141,6 +152,57 @@
 				C751766E18E1717A005E248A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C751768618E17329005E248A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C751768718E17329005E248A /* JSCBridge */,
+				C751768F18E17329005E248A /* ResourceManager */,
+				C751769418E17329005E248A /* VersionControl */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C751768718E17329005E248A /* JSCBridge */ = {
+			isa = PBXGroup;
+			children = (
+				C751768818E17329005E248A /* BridgeWebViewController.h */,
+				C751768918E17329005E248A /* BridgeWebViewController.m */,
+				C751768A18E17329005E248A /* JSCBridgeExport.h */,
+				C751768B18E17329005E248A /* JSCResponseDelegate.h */,
+				C751768C18E17329005E248A /* UIWebView+JavaScriptContext */,
+			);
+			path = JSCBridge;
+			sourceTree = "<group>";
+		};
+		C751768C18E17329005E248A /* UIWebView+JavaScriptContext */ = {
+			isa = PBXGroup;
+			children = (
+				C751768D18E17329005E248A /* UIWebView+JavaScriptContext.h */,
+				C751768E18E17329005E248A /* UIWebView+JavaScriptContext.m */,
+			);
+			path = "UIWebView+JavaScriptContext";
+			sourceTree = "<group>";
+		};
+		C751768F18E17329005E248A /* ResourceManager */ = {
+			isa = PBXGroup;
+			children = (
+				C751769018E17329005E248A /* ResourceManager.h */,
+				C751769118E17329005E248A /* ResourceManager.m */,
+				C751769218E17329005E248A /* WebBridgeAPI.h */,
+				C751769318E17329005E248A /* WebBridgeAPI.m */,
+			);
+			path = ResourceManager;
+			sourceTree = "<group>";
+		};
+		C751769418E17329005E248A /* VersionControl */ = {
+			isa = PBXGroup;
+			children = (
+				C751769518E17329005E248A /* VersionControl.h */,
+				C751769618E17329005E248A /* VersionControl.m */,
+			);
+			path = VersionControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C751765D18E1717A005E248A /* HybridBridge.m in Sources */,
+				C751769818E17329005E248A /* UIWebView+JavaScriptContext.m in Sources */,
+				C751769918E17329005E248A /* ResourceManager.m in Sources */,
+				C751769A18E17329005E248A /* WebBridgeAPI.m in Sources */,
+				C751769718E17329005E248A /* BridgeWebViewController.m in Sources */,
+				C751769B18E17329005E248A /* VersionControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
