@@ -13,5 +13,6 @@ Pod::Spec.new do |s|
   s.requires_arc       = true
   s.dependency 'AFNetworking', '~> 2.2.1'
   s.dependency 'JSONModel', '~> 0.12.0'
+  s.dependency 'SSZipArchive', '~> 0.3.1'
 
 end
