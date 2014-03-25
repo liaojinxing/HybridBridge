@@ -1,15 +1,17 @@
 Pod::Spec.new do |s|
 
-  s.name         = "EasyImage"
-  s.version      = "1.1.0"
-  s.summary      = "Process image easily, including resizing, scaling, clipping and so on"
-  s.homepage     = "https://github.com/liaojinxing/EasyImage"
+  s.name         = "HybridBridge"
+  s.version      = "1.0.0"
+  s.summary      = "Bridge for Javascript and Objective-C in hybrid app development, using JavascriptCore"
+  s.homepage     = "https://github.com/liaojinxing/HybridBridge"
   s.author             = { "liaojinxing" => "jinxingliao@gmail.com" }
   s.platform           = :ios, '5.0'
   s.license = 'MIT'
-  s.source       = { :git => "https://github.com/liaojinxing/EasyImage.git", :tag => "1.1.0" }
-  s.source_files  = 'EasyImage/**/*.{h,m}'
-  s.frameworks         = 'SystemConfiguration'
+  s.source       = { :git => "https://github.com/liaojinxing/HybridBridge.git", :tag => "1.0.0" }
+  s.source_files  = 'HybridBridge/**/*.{h,m}'
+  s.frameworks         = 'JavaScriptCore'
   s.requires_arc       = true
+  s.dependency 'AFNetworking', '~> 2.2.1'
+  s.dependency 'JSONModel', '~> 0.12.0'
 
 end
