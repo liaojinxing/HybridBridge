@@ -26,7 +26,7 @@
   [self.window makeKeyAndVisible];
 
   MainViewController *controller = [[MainViewController alloc] init];
-  self.window.rootViewController = controller;
+  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
 
   [WebBridgeAPI hasResourceUpdateWithLocalVersion:[manager currentVersion]
                                           success:^(VersionControl *versionControl) {

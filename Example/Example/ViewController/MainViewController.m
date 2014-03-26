@@ -10,11 +10,11 @@
 #import "ResourceManager.h"
 #import "WebBridgeAPI.h"
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "WishViewController.h"
 
 @interface MainViewController ()<JSCResponseDelegate>
 
 @property (strong, nonatomic)  UIBarButtonItem *switchButton;
-//@property (nonatomic, strong) WebViewJavascriptBridge *bridge;
 
 @end
 
@@ -38,38 +38,13 @@
   [self.webView loadRequest:request];
 }
 
-- (BOOL)             webView:(UIWebView *)webView
-  shouldStartLoadWithRequest:(NSURLRequest *)request
-              navigationType:(UIWebViewNavigationType)navigationType
-{
-  /*
-  NSString *urlString = request.URL.absoluteString;
-  NSArray *components = [urlString componentsSeparatedByString:@"://"];
-  if (components.count > 0 && [components[0] isEqualToString:@"doubanmovie"]) {
-    HelloViewController *controller = [[HelloViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
-    return NO;
-  }
-   */
-  return YES;
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-}
-
 - (NSString *)responseForEventType:(NSString *)eventType message:(NSString *)message
 {
+  if ([eventType isEqualToString:@"wish"]) {
+    WishViewController *controller = [[WishViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    return @"";
+  }
   return @"haha";
 }
 

@@ -1,38 +1,6 @@
 
 var movie;
 
-function connectWebViewJavascriptBridge(callback) {
-    if (window.WebViewJavascriptBridge) {
-        callback(WebViewJavascriptBridge)
-    } else {
-        document.addEventListener('WebViewJavascriptBridgeReady', function() {
-            callback(WebViewJavascriptBridge)
-         }, false)
-    }
-}
-
-    connectWebViewJavascriptBridge(function(bridge) {
-        var uniqueId = 1
-        function log(message, data) {
-            var log = document.getElementById('log')
-            var el = document.createElement('div')
-            el.className = 'logLine'
-            el.innerHTML = uniqueId++ + '. ' + message + (data ? ':<br/>' + JSON.stringify(data) : '')
-            if (log.children.length) { log.insertBefore(el, log.children[0]) }
-            else { log.appendChild(el) }
-        }
-        bridge.init(function(message, responseCallback) {
-            responseCallback(data)
-        })
-
-        bridge.callHandler('GetJsonFromObjc', {'id': '123456'}, function(response) {
-                movie = JSON.parse(response)
-                //log(movie.title)
-                renderTemplate()
-            })
-    })
-
-
 function renderTemplate () {
     renderMovieBriefSection();
     renderMovieDetailSection();
@@ -53,7 +21,13 @@ function renderMovieDetailSection () {
 }
 
 function wish () {
-        location.href = "doubanmovie://action/wish/5317291";
+  bridge.sendMessage('wish', '5317291', hasWished);
+}
+
+function hasWished(){
+  var wishButton = $("#wish-btn");
+  wishButton.html("你想看呀");
+  wishButton.attr('disabled','disabled');
 }
 
 function collect () {

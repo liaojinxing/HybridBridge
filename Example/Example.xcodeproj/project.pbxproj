@@ -25,6 +25,7 @@
 		C776BDF418E270A100466ABE /* movie.html in Resources */ = {isa = PBXBuildFile; fileRef = C776BDEE18E270A100466ABE /* movie.html */; };
 		C776BDF918E2A33B00466ABE /* jquery-1.11.0.min.js in Resources */ = {isa = PBXBuildFile; fileRef = C776BDF018E270A100466ABE /* jquery-1.11.0.min.js */; };
 		C776BDFA18E2A33B00466ABE /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = C776BDF118E270A100466ABE /* myScript.js */; };
+		C79D3F1318E2CE990029411E /* WishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79D3F1218E2CE990029411E /* WishViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		C776BDEE18E270A100466ABE /* movie.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = movie.html; sourceTree = "<group>"; };
 		C776BDF018E270A100466ABE /* jquery-1.11.0.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.11.0.min.js"; sourceTree = "<group>"; };
 		C776BDF118E270A100466ABE /* myScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = myScript.js; sourceTree = "<group>"; };
+		C79D3F1118E2CE990029411E /* WishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishViewController.h; path = ViewController/WishViewController.h; sourceTree = "<group>"; };
+		C79D3F1218E2CE990029411E /* WishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishViewController.m; path = ViewController/WishViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 			children = (
 				C751771318E18EB7005E248A /* MainViewController.h */,
 				C751771418E18EB7005E248A /* MainViewController.m */,
+				C79D3F1118E2CE990029411E /* WishViewController.h */,
+				C79D3F1218E2CE990029411E /* WishViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75176F418E18D69005E248A /* AppDelegate.m in Sources */,
+				C79D3F1318E2CE990029411E /* WishViewController.m in Sources */,
 				C751771518E18EB7005E248A /* MainViewController.m in Sources */,
 				C75176F018E18D69005E248A /* main.m in Sources */,
 			);
