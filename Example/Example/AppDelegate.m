@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "WebBridgeAPI.h"
+#import "ResourceManager.h"
 
 @implementation AppDelegate
 
@@ -23,6 +24,18 @@
   self.window.rootViewController = controller;
 
   [WebBridgeAPI setAPIBaseURL:@"http://doubandev2.intra.douban.com:9809"];
+  
+  [WebBridgeAPI hasResourceUpdateSuccess:^(VersionControl *versionControl) {
+    NSLog(@"%@", versionControl);
+    if (versionControl.hasUpdate) {
+      NSLog(@"%@", versionControl.version);
+      ResourceManager *manager = [ResourceManager sharedManager];
+      manager.resourceURL = [NSString stringWithFormat:@"%@/%@.zip", [WebBridgeAPI APIBaseURL], versionControl.version];
+      [manager downloadUpdatedResource];
+    }
+  } fail:NULL];
+  
+  
   return YES;
 }
 

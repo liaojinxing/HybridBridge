@@ -1,0 +1,37 @@
+PODS:
+  - AFNetworking (2.2.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.2.1):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.2.1)
+  - AFNetworking/Security (2.2.1)
+  - AFNetworking/Serialization (2.2.1)
+  - AFNetworking/UIKit (2.2.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - HybridBridge (1.0.3):
+    - AFNetworking (~> 2.2.1)
+    - JSONModel (~> 0.12.0)
+    - SSZipArchive (~> 0.3.1)
+  - JSONModel (0.12.0)
+  - SSZipArchive (0.3.1)
+
+DEPENDENCIES:
+  - HybridBridge (~> 1.0.3)
+
+SPEC CHECKSUMS:
+  AFNetworking: 0121f4b69be3fa58d1ab317866e036e12ac9651d
+  HybridBridge: bb5234232b19a0ad4a817c998ec01a970104e69a
+  JSONModel: f391da60a15e11f8fa8950fb980b8f799ae3453f
+  SSZipArchive: 47d0589a15452311749a4eeecb97e12800d127de
+
+COCOAPODS: 0.29.0

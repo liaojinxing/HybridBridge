@@ -8,8 +8,6 @@
 
 #import "MainViewController.h"
 #import "ResourceManager.h"
-#import "HelloViewController.h"
-#import "WebViewJavascriptBridge.h"
 #import "WebBridgeAPI.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
@@ -30,27 +28,6 @@
   self.responseDelegate = self;
 }
 
-/*
-   - (void)viewWillAppear:(BOOL)animated
-   {
-
-   _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView
-                                      webViewDelegate:self
-                                              handler:^(id data, WVJBResponseCallback responseCallback) {
-                                                NSLog(@"ObjC received message from JS: %@", data);
-                                                responseCallback(@"Response for message from ObjC");
-                                              }];
-
-   [_bridge registerHandler:@"GetJsonFromObjc" handler:^(id data, WVJBResponseCallback responseCallback) {
-    NSLog(@"testObjcCallback called: %@", data);
-    [HybridAPI readMovieJsonSuccess:^(NSString *json) {
-      responseCallback(json);
-    } fail:NULL];
-
-   }];
-   }
- */
-
 - (void)loadTamplate
 {
   ResourceManager *manager = [ResourceManager sharedManager];
@@ -65,6 +42,7 @@
   shouldStartLoadWithRequest:(NSURLRequest *)request
               navigationType:(UIWebViewNavigationType)navigationType
 {
+  /*
   NSString *urlString = request.URL.absoluteString;
   NSArray *components = [urlString componentsSeparatedByString:@"://"];
   if (components.count > 0 && [components[0] isEqualToString:@"doubanmovie"]) {
@@ -72,6 +50,7 @@
     [self.navigationController pushViewController:controller animated:YES];
     return NO;
   }
+   */
   return YES;
 }
 
