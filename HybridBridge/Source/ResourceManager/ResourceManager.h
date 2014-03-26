@@ -13,8 +13,13 @@
 @property (strong, nonatomic) NSString *resourceURL;
 
 + (instancetype)sharedManager;
-- (void)downloadUpdatedResource;
 - (NSString *)resourceFilePath;
 - (void)clearZips;
+
+- (void)downloadUpdatedResource:(NSArray *)updatedZipName;
+- (void)downloadInitialResource;
+- (void)downloadResourceWithURL:(NSString *)url;
+- (void)createInitialResource;
+- (NSString *)currentVersion;
 
 @end

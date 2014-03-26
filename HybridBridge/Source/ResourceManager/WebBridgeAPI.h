@@ -13,8 +13,9 @@
 
 + (AFHTTPRequestOperationManager *)sharedManager;
 
-+ (void)hasResourceUpdateSuccess:(void (^)(VersionControl *versionControl))successBlock
-                            fail:(void (^)(NSError *error))failed;
++ (void)hasResourceUpdateWithLocalVersion:(NSString *)version
+                                  success:(void (^)(VersionControl *versionControl))successBlock
+                                     fail:(void (^)(NSError *error))failed;
 
 
 + (void)readMovieJsonSuccess:(void (^)(NSString *json))success

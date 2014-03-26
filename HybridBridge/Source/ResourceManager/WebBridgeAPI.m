@@ -17,8 +17,8 @@ static NSString *baseURL = nil;
   static id instance = nil;
   static dispatch_once_t onceToken = 0L;
   dispatch_once(&onceToken, ^{
-                  instance = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseURL]];
-                });
+    instance = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:baseURL]];
+  });
   return instance;
 }
 
@@ -32,52 +32,55 @@ static NSString *baseURL = nil;
   return baseURL;
 }
 
-+ (void)hasResourceUpdateSuccess:(void (^)(VersionControl *versionControl))successBlock
-                            fail:(void (^)(NSError *error))failed
++ (void)hasResourceUpdateWithLocalVersion:(NSString *)version
+                                  success:(void (^)(VersionControl *versionControl))successBlock
+                                     fail:(void (^)(NSError *error))failed
 {
   AFHTTPRequestOperationManager *manager = [WebBridgeAPI sharedManager];
-  [manager GET:@"hasUpdate"
-    parameters:nil
-       success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     NSLog(@"%@", operation.responseString);
-     if (successBlock) {
-       NSError *error = nil;
-       VersionControl *versionControl = [[VersionControl alloc] initWithString:operation.responseString error:&error];
-       successBlock(versionControl);
-     }
-   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     NSLog(@"%@", error);
-     if (failed) {
-       failed(error);
-     }
-   }];
+  
+  NSDictionary *parameter = [NSDictionary dictionaryWithObject:version forKey:@"version"];
+  [manager POST:@"hasUpdate"
+     parameters:parameter
+        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          NSLog(@"%@", operation.responseString);
+          if (successBlock) {
+            NSError *error = nil;
+            VersionControl *versionControl = [[VersionControl alloc] initWithString:operation.responseString error:&error];
+            successBlock(versionControl);
+          }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          NSLog(@"%@", error);
+          if (failed) {
+            failed(error);
+          }
+        }];
 }
 
 + (void)readMovieJsonSuccess:(void (^)(NSString *json))success
                         fail:(void (^)(NSError *error))failed
 {
   AFHTTPRequestOperationManager *manager = [WebBridgeAPI sharedManager];
-
+  
   NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:@"movie" relativeToURL:manager.baseURL] absoluteString] parameters:nil error:nil];
   [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-
+  
   NSCachedURLResponse *cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
   if (cachedResponse) {
     NSString *cachedString = [[NSString alloc] initWithData:[cachedResponse data] encoding:NSUTF8StringEncoding];
     success(cachedString);
     return;
   }
-
+  
   AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                         if (success) {
-                                           success(operation.responseString);
-                                         }
-                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                         NSLog(@"%@", error);
-                                         if (failed) {
-                                           failed(error);
-                                         }
-                                       }];
+    if (success) {
+      success(operation.responseString);
+    }
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"%@", error);
+    if (failed) {
+      failed(error);
+    }
+  }];
   [manager.operationQueue addOperation:operation];
 }
 

@@ -10,7 +10,7 @@
 
 @interface VersionControl : JSONModel
 
-@property (strong, nonatomic) NSString *version;
+@property (strong, nonatomic) NSArray *versions;
 @property (assign, nonatomic) BOOL hasUpdate;
 
 @end
