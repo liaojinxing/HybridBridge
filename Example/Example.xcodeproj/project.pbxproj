@@ -23,8 +23,8 @@
 		C751771518E18EB7005E248A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C751771418E18EB7005E248A /* MainViewController.m */; };
 		C776BDF218E270A100466ABE /* movie.css in Resources */ = {isa = PBXBuildFile; fileRef = C776BDEB18E270A100466ABE /* movie.css */; };
 		C776BDF418E270A100466ABE /* movie.html in Resources */ = {isa = PBXBuildFile; fileRef = C776BDEE18E270A100466ABE /* movie.html */; };
-		C776BDF518E270A100466ABE /* jquery-1.11.0.min.js in Sources */ = {isa = PBXBuildFile; fileRef = C776BDF018E270A100466ABE /* jquery-1.11.0.min.js */; };
-		C776BDF618E270A100466ABE /* myScript.js in Sources */ = {isa = PBXBuildFile; fileRef = C776BDF118E270A100466ABE /* myScript.js */; };
+		C776BDF918E2A33B00466ABE /* jquery-1.11.0.min.js in Resources */ = {isa = PBXBuildFile; fileRef = C776BDF018E270A100466ABE /* jquery-1.11.0.min.js */; };
+		C776BDFA18E2A33B00466ABE /* myScript.js in Resources */ = {isa = PBXBuildFile; fileRef = C776BDF118E270A100466ABE /* myScript.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +292,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C776BDF918E2A33B00466ABE /* jquery-1.11.0.min.js in Resources */,
+				C776BDFA18E2A33B00466ABE /* myScript.js in Resources */,
 				C75176EE18E18D69005E248A /* InfoPlist.strings in Resources */,
 				C776BDF418E270A100466ABE /* movie.html in Resources */,
 				C75176F618E18D69005E248A /* Images.xcassets in Resources */,
@@ -348,8 +350,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75176F418E18D69005E248A /* AppDelegate.m in Sources */,
-				C776BDF618E270A100466ABE /* myScript.js in Sources */,
-				C776BDF518E270A100466ABE /* jquery-1.11.0.min.js in Sources */,
 				C751771518E18EB7005E248A /* MainViewController.m in Sources */,
 				C75176F018E18D69005E248A /* main.m in Sources */,
 			);

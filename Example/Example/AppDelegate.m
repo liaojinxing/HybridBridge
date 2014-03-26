@@ -15,6 +15,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [WebBridgeAPI setAPIBaseURL:@"http://doubandev2.intra.douban.com:9809"];
+
+  ResourceManager *manager = [ResourceManager sharedManager];
+  [manager createInitialResource];
+  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   self.window.backgroundColor = [UIColor whiteColor];
@@ -23,18 +28,14 @@
   MainViewController *controller = [[MainViewController alloc] init];
   self.window.rootViewController = controller;
 
-  [WebBridgeAPI setAPIBaseURL:@"http://doubandev2.intra.douban.com:9809"];
-  
-  [WebBridgeAPI hasResourceUpdateSuccess:^(VersionControl *versionControl) {
-    NSLog(@"%@", versionControl);
-    if (versionControl.hasUpdate) {
-      NSLog(@"%@", versionControl.version);
-      ResourceManager *manager = [ResourceManager sharedManager];
-      manager.resourceURL = [NSString stringWithFormat:@"%@/%@.zip", [WebBridgeAPI APIBaseURL], versionControl.version];
-      [manager downloadUpdatedResource];
-    }
-  } fail:NULL];
-  
+  [WebBridgeAPI hasResourceUpdateWithLocalVersion:[manager currentVersion]
+                                          success:^(VersionControl *versionControl) {
+                                            NSLog(@"%@", versionControl);
+                                            if (versionControl.hasUpdate) {
+                                              NSLog(@"%@", versionControl.versions);
+                                              [manager downloadUpdatedResource:versionControl.versions];
+                                            }
+                                          } fail:NULL];
   
   return YES;
 }
