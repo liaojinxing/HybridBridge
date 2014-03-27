@@ -10,9 +10,12 @@
 #import "JSCBridgeExport.h"
 #import "UIWebView+JavaScriptContext.h"
 #import "WebBridgeAPI.h"
+#import "VersionControl.h"
 
 @interface BridgeWebViewController ()<JSCBridgeExport, JSCWebViewDelegate>
-
+{
+  NSMutableDictionary* _jsHandlers;
+}
 @end
 
 @implementation BridgeWebViewController
@@ -23,20 +26,28 @@
   self.webView = [[UIWebView alloc] initWithFrame:self.view.frame];
   self.webView.delegate = self;
   [self.view addSubview:self.webView];
+  _jsHandlers = [NSMutableDictionary dictionary];
+}
+
+- (void)dealloc
+{
+  _jsHandlers = nil;
 }
 
 - (void)webView:(UIWebView *)webView bridgeDidCreateJavaScriptContext:(JSContext *)ctx
 {
   ctx[@"bridge"] = self;
+  ctx[@"ready"] = @(YES);
 }
 
 // Javascript call objc
-- (void)getJsonWithURL:(NSString *)URL
+- (void)getJSONWithURL:(NSString *)URL
+               options:(NSDictionary *)options
               callback:(JSValue *)callback
 {
   AFHTTPRequestOperationManager *manager = [WebBridgeAPI sharedManager];
   [manager GET:URL
-    parameters:nil
+    parameters:options
        success:^(AFHTTPRequestOperation *operation, id responseObject) {
          NSString *json = [operation responseString];
          if (![callback isNull] && json) {
@@ -60,14 +71,10 @@
 - (void)postWithEventType:(NSString *)eventType message:(NSString *)message
 {
   JSContext *context = [_webView javaScriptContext];
-
+  
   id response = [self responseForEventType:eventType message:message];
   NSString *responseID = [self responseIDForEventType:eventType];
   context[responseID] = response;
-  
-  [self sendMessageToJS:@"hello world" callback:^(id responseData) {
-    NSLog(@"%@", responseData);
-  }];
 }
 
 - (void)receiveWithEventType:(NSString *)eventType callback:(JSValue *)callback
@@ -82,7 +89,7 @@
 
 - (NSString *)responseIDForEventType:(NSString *)eventType
 {
-  return [NSString stringWithFormat:@"response_%@", eventType];
+  return eventType;
 }
 
 - (id)responseForEventType:(NSString *)eventType message:(NSString *)message
@@ -94,14 +101,33 @@
 }
 
 // objc call javascript
-- (void)sendMessageToJS:(NSString *)message callback:(void (^)(id responseData))callback
+- (void)registerHandler:(NSString *)handlerName handler:(JSValue *)handler
 {
-  JSContext *context = [_webView javaScriptContext];
-  JSValue *responseFunction = context[@"responseDataToObjc"];
-  JSValue *response = [responseFunction callWithArguments:@[message]];
-  if (callback && ![response isNull] && ![response isUndefined]) {
-    callback(response);
+  [_jsHandlers setObject:handler forKey:handlerName];
+}
+
+- (void)callHandler:(NSString *)handlerName
+         parameters:(NSArray *)parameters
+           callback:(void (^)(id responseData))callback
+{
+  JSValue *handler = [_jsHandlers objectForKey:handlerName];
+  if (nil == handler) {
+    return;
+  }
+  JSValue *responseData = [handler callWithArguments:parameters];
+  if (callback) {
+    if ([responseData isUndefined] || [responseData isNull]) {
+      responseData = nil;
+    }
+    callback(responseData);
   }
 }
 
+- (void)sendMessageToJSForKey:(NSString *)key value:(id)message
+{
+  JSContext *context = [_webView javaScriptContext];
+  context[key] = message;
+}
+
 @end
+

@@ -15,6 +15,12 @@
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, weak) id<JSCResponseDelegate> responseDelegate;
 
-- (void)sendMessageToJS:(NSString *)message callback:(void (^)(id responseData))callback;
+// 实现objc主动向js推送数据
+// 与js端的receiveMessage配对使用：bridge.receiveMessage(key, callback)
+- (void)sendMessageToJSForKey:(NSString *)key value:(id)message;
+
+- (void)callHandler:(NSString *)handlerName
+         parameters:(NSArray *)parameters
+           callback:(void (^)(id responseData))callback;
 
 @end
