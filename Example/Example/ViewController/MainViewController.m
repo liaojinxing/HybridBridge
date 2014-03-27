@@ -38,6 +38,7 @@
   [self.webView loadRequest:request];
 }
 
+
 - (NSString *)responseForEventType:(NSString *)eventType message:(NSString *)message
 {
   if ([eventType isEqualToString:@"wish"]) {
