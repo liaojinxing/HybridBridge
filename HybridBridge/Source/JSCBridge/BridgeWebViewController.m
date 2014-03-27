@@ -11,6 +11,7 @@
 #import "UIWebView+JavaScriptContext.h"
 #import "WebBridgeAPI.h"
 #import "VersionControl.h"
+#import "NSData+Base64.h"
 
 @interface BridgeWebViewController ()<JSCBridgeExport, JSCWebViewDelegate>
 {
@@ -127,6 +128,23 @@
 {
   JSContext *context = [_webView javaScriptContext];
   context[key] = message;
+}
+
+// advanced usage
+- (NSString *)base64StringForImageURL:(NSString *)imageURL
+                            imageType:(NSString *)imageType
+{
+  NSURL *URL = [NSURL URLWithString:imageURL];
+  UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:URL]];
+  NSData *data = nil;
+  if ([imageType isEqualToString:@"png"]) {
+    data = UIImagePNGRepresentation(image);
+  } else if ([imageType isEqualToString:@"jpg"]) {
+    data = UIImageJPEGRepresentation(image, 1.0);
+  }
+  NSString *string = [data base64EncodedString];
+  string = [NSString stringWithFormat:@"data:image/png;base64,%@", string];
+  return string;
 }
 
 @end

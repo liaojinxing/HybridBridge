@@ -19,16 +19,19 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONModel (0.12.0)
+  - NSData+Base64 (1.0.0)
   - SSZipArchive (0.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2.1)
   - JSONModel (~> 0.12.0)
+  - NSData+Base64 (~> 1.0.0)
   - SSZipArchive (~> 0.3.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 0121f4b69be3fa58d1ab317866e036e12ac9651d
   JSONModel: f391da60a15e11f8fa8950fb980b8f799ae3453f
+  NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
   SSZipArchive: 47d0589a15452311749a4eeecb97e12800d127de
 
 COCOAPODS: 0.29.0

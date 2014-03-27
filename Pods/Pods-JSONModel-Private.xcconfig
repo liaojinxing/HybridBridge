@@ -1,5 +1,5 @@
 #include "Pods-JSONModel.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/JSONModel" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/JSONModel" "${PODS_ROOT}/Headers/SSZipArchive" "${PODS_ROOT}/Headers/SSZipArchive/minizip"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/JSONModel" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/JSONModel" "${PODS_ROOT}/Headers/NSData+Base64" "${PODS_ROOT}/Headers/SSZipArchive" "${PODS_ROOT}/Headers/SSZipArchive/minizip"
 OTHER_LDFLAGS = -ObjC
 PODS_ROOT = ${SRCROOT}

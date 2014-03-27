@@ -13,22 +13,26 @@
 
 JSExportAs(getJSON,
            - (void)getJSONWithURL:(NSString *)URL
-           options:(NSDictionary *)options
-           callback:(JSValue *)callback);
+                          options:(NSDictionary *)options
+                         callback:(JSValue *)callback);
 
 JSExportAs(sendMessageAndCallback,
            - (void)sendDataWithEventType:(NSString *)eventType
-           message:(NSString *)message
-           callback:(JSValue *)callback);
+                                 message:(NSString *)message
+                                callback:(JSValue *)callback);
 JSExportAs(postMessage,
            - (void)postWithEventType:(NSString *)eventType
-           message:(NSString *)message);
+                             message:(NSString *)message);
 JSExportAs(receiveMessage,
            - (void)receiveWithEventType:(NSString *)eventType
-           callback:(JSValue *)callback);
+                               callback:(JSValue *)callback);
 
 JSExportAs(registerHandler,
            - (void)registerHandler:(NSString *)handlerName
-           handler:(JSValue *)handler);
+                           handler:(JSValue *)handler);
+
+JSExportAs(loadImage,
+           - (NSString *)base64StringForImageURL:(NSString *)imageURL
+                                       imageType:(NSString *)imageType);
 
 @end
