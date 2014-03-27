@@ -18,7 +18,7 @@ PODS:
   - AFNetworking/UIKit (2.2.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - HybridBridge (1.0.3):
+  - HybridBridge (1.1.0):
     - AFNetworking (~> 2.2.1)
     - JSONModel (~> 0.12.0)
     - SSZipArchive (~> 0.3.1)
@@ -26,11 +26,11 @@ PODS:
   - SSZipArchive (0.3.1)
 
 DEPENDENCIES:
-  - HybridBridge (~> 1.0.3)
+  - HybridBridge (~> 1.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 0121f4b69be3fa58d1ab317866e036e12ac9651d
-  HybridBridge: bb5234232b19a0ad4a817c998ec01a970104e69a
+  HybridBridge: b8b62ee54dc1015db182a359f98ec58254c27b92
   JSONModel: f391da60a15e11f8fa8950fb980b8f799ae3453f
   SSZipArchive: 47d0589a15452311749a4eeecb97e12800d127de
 

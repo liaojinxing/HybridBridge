@@ -114,7 +114,7 @@
     </section>
     <button type='button' class='action-btn' onclick='bridge.postMessage("test", "hello from js")'>post</button>
     <button type='button' class='action-btn' onclick='bridge.receiveMessage("test", testReceiveMessage)'>receive</button>
-    <button type='button' class='action-btn' onclick='bridge.sendMessage("test", "hello from js", testReceiveMessage)'>send</button>
+    <button type='button' class='action-btn' onclick='bridge.sendMessageAndCallback("test", "hello from js", testReceiveMessage)'>send</button>
 
     <script type="text/javascript">
         var url = "movie"
