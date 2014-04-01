@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-NSData+Base64.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-SSZipArchive.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>187D338C91C0487AA4C5ACB3</key>
+		<key>78F923B96A4743EC90BB90EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B8F9767C55345D4BD03CF5C</key>
+		<key>B0570FB4E0BF4ACBA76E4660</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7775DB486F34474391574E6E</key>
+		<key>C2E8252560CB42D49DB1A716</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6BF0CBA1A4E41A39FC94773</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CBF7BB248AFD4291ABD2571F</key>
+		<key>F73F3B0769054A7E8611E0AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
