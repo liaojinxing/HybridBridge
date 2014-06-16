@@ -122,6 +122,3 @@ Check resource update and download if needed:
 
 For more details, please check the example project.
 
-Others
-------
-If you like it, please star this repo, thanks. Wating for your pull requests.
