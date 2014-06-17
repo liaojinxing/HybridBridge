@@ -26,8 +26,10 @@
   [self.window makeKeyAndVisible];
 
   MainViewController *controller = [[MainViewController alloc] init];
-  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
-
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+  navigationController.navigationBarHidden = YES;
+  self.window.rootViewController = navigationController;
+  /*
   [WebBridgeAPI hasResourceUpdateWithLocalVersion:[manager currentVersion]
                                           success:^(VersionControl *versionControl) {
                                             NSLog(@"%@", versionControl);
@@ -36,6 +38,7 @@
                                               [manager downloadUpdatedResource:versionControl.versions];
                                             }
                                           } fail:NULL];
+   */
   
   return YES;
 }

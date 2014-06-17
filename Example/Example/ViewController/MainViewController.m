@@ -2,8 +2,8 @@
 //  ViewController.m
 //  WebTest
 //
-//  Created by Alvin on 14-2-7.
-//  Copyright (c) 2014年 Alvin. All rights reserved.
+//  Created by liaojinxing on 14-2-7.
+//  Copyright (c) 2014年 Douban. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -32,12 +32,11 @@
 {
   ResourceManager *manager = [ResourceManager sharedManager];
 
-  NSString *filePath = [NSString stringWithFormat:@"%@/web/html/movie.html", [manager resourceFilePath]];
+  NSString *filePath = [NSString stringWithFormat:@"%@/www/index.html", [manager resourceFilePath]];
   NSURL *url = [NSURL fileURLWithPath:filePath isDirectory:NO];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   [self.webView loadRequest:request];
 }
-
 
 - (NSString *)responseForEventType:(NSString *)eventType message:(NSString *)message
 {

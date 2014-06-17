@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+  <title>douban x</title>
+  <link rel="stylesheet" href="build/css/app.css" />
+</head>
+<body>
+<div id="root"></div>
+<!--script src="http://192.168.1.26:8080/target/target-script-min.js#anonymous"></script-->
+<!--script type="text/javascript" src="phonegap.js"></script-->
+<script type="text/javascript" src="build/js/external.js"></script>
+<script type="text/javascript" src="build/js/app.js"></script>
+<script type="text/javascript">
+  if(typeof PhoneGap == 'object'
+      || typeof phonegap == 'object'
+      || typeof cordova == 'object') {
+    document.addEventListener('deviceready', app.start(document.getElementById('root')));
+  } else {
+    app.start(document.getElementById('root'));
+  }
+</script>
+</body>
+</html>
