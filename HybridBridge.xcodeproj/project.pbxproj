@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16D1A760CDD5403D94AB6A7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 915FBECD53814317808FAA4D /* libPods.a */; };
+		C71E0E11195D7579003DB0C1 /* VersionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C71E0E10195D7579003DB0C1 /* VersionControl.m */; };
 		C751765618E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
 		C751766418E1717A005E248A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751766318E1717A005E248A /* XCTest.framework */; };
 		C751766518E1717A005E248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751765518E1717A005E248A /* Foundation.framework */; };
@@ -19,7 +20,6 @@
 		C751769818E17329005E248A /* UIWebView+JavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = C751768E18E17329005E248A /* UIWebView+JavaScriptContext.m */; };
 		C751769918E17329005E248A /* ResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C751769118E17329005E248A /* ResourceManager.m */; };
 		C751769A18E17329005E248A /* WebBridgeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C751769318E17329005E248A /* WebBridgeAPI.m */; };
-		C751769B18E17329005E248A /* VersionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C751769618E17329005E248A /* VersionControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		915FBECD53814317808FAA4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71E0E0F195D7579003DB0C1 /* VersionControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionControl.h; sourceTree = "<group>"; };
+		C71E0E10195D7579003DB0C1 /* VersionControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionControl.m; sourceTree = "<group>"; };
 		C751765218E1717A005E248A /* libHybridBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHybridBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C751765518E1717A005E248A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C751765918E1717A005E248A /* HybridBridge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HybridBridge-Prefix.pch"; sourceTree = "<group>"; };
@@ -65,8 +67,6 @@
 		C751769118E17329005E248A /* ResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceManager.m; sourceTree = "<group>"; };
 		C751769218E17329005E248A /* WebBridgeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBridgeAPI.h; sourceTree = "<group>"; };
 		C751769318E17329005E248A /* WebBridgeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBridgeAPI.m; sourceTree = "<group>"; };
-		C751769518E17329005E248A /* VersionControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionControl.h; sourceTree = "<group>"; };
-		C751769618E17329005E248A /* VersionControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionControl.m; sourceTree = "<group>"; };
 		DA81B21ABCB74C948817E674 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71E0E0E195D7579003DB0C1 /* VersionControl */ = {
+			isa = PBXGroup;
+			children = (
+				C71E0E0F195D7579003DB0C1 /* VersionControl.h */,
+				C71E0E10195D7579003DB0C1 /* VersionControl.m */,
+			);
+			path = VersionControl;
+			sourceTree = "<group>";
+		};
 		C751764918E1717A005E248A = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +172,9 @@
 		C751768618E17329005E248A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C71E0E0E195D7579003DB0C1 /* VersionControl */,
 				C751768718E17329005E248A /* JSCBridge */,
 				C751768F18E17329005E248A /* ResourceManager */,
-				C751769418E17329005E248A /* VersionControl */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -200,15 +209,6 @@
 				C751769318E17329005E248A /* WebBridgeAPI.m */,
 			);
 			path = ResourceManager;
-			sourceTree = "<group>";
-		};
-		C751769418E17329005E248A /* VersionControl */ = {
-			isa = PBXGroup;
-			children = (
-				C751769518E17329005E248A /* VersionControl.h */,
-				C751769618E17329005E248A /* VersionControl.m */,
-			);
-			path = VersionControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +331,7 @@
 				C751769918E17329005E248A /* ResourceManager.m in Sources */,
 				C751769A18E17329005E248A /* WebBridgeAPI.m in Sources */,
 				C751769718E17329005E248A /* BridgeWebViewController.m in Sources */,
-				C751769B18E17329005E248A /* VersionControl.m in Sources */,
+				C71E0E11195D7579003DB0C1 /* VersionControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

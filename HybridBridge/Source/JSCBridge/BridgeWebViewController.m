@@ -14,7 +14,7 @@
 
 @interface BridgeWebViewController ()<JSCBridgeExport, JSCWebViewDelegate>
 {
-  NSMutableDictionary* _jsHandlers;
+  NSMutableDictionary *_jsHandlers;
 }
 @end
 
@@ -49,13 +49,13 @@
   [manager GET:URL
     parameters:options
        success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         NSString *json = [operation responseString];
-         if (![callback isNull] && json) {
-           [callback callWithArguments:@[json]];
-         }
-       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         NSLog(@"%@", error);
-       }];
+     NSString *json = [operation responseString];
+     if (![callback isNull] && json) {
+       [callback callWithArguments:@[json]];
+     }
+   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     NSLog(@"%@", error);
+   }];
 }
 
 - (void)sendDataWithEventType:(NSString *)eventType
@@ -71,7 +71,7 @@
 - (void)postWithEventType:(NSString *)eventType message:(NSString *)message
 {
   JSContext *context = [_webView javaScriptContext];
-  
+
   id response = [self responseForEventType:eventType message:message];
   NSString *responseID = [self responseIDForEventType:eventType];
   context[responseID] = response;
@@ -129,25 +129,49 @@
   context[key] = message;
 }
 
-// advanced usage
-- (NSString *)base64StringForImageURL:(NSString *)imageURL
-                            imageType:(NSString *)imageType
+- (void)loadImageWithURL:(NSString *)imageURL
+                callback:(JSValue *)callback
 {
   NSURL *URL = [NSURL URLWithString:imageURL];
   UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:URL]];
   NSData *data = nil;
   NSString *prefix = nil;
+
+  NSString *imageType = @"png";
+  NSArray *array = [[imageURL lastPathComponent] componentsSeparatedByString:@"."];
+  if (array) {
+    imageType = [array objectAtIndex:array.count - 1];
+  }
+
   if ([imageType isEqualToString:@"png"]) {
     data = UIImagePNGRepresentation(image);
     prefix = @"data:image/png;base64,";
-  } else if ([imageType isEqualToString:@"jpg"]) {
+  } else if ([imageType isEqualToString:@"jpg"] || [imageType isEqualToString:@"jpeg"]) {
     data = UIImageJPEGRepresentation(image, 1.0);
     prefix = @"data:image/jpeg;base64,";
   }
-  NSString *string = [data base64EncodedStringWithOptions:0];
-  string = [NSString stringWithFormat:@"%@%@", prefix, string];
-  return string;
+  NSString *base64String = [data base64EncodedStringWithOptions:0];
+  base64String = [NSString stringWithFormat:@"%@%@", prefix, base64String];
+
+  if (callback && ![callback isNull]) {
+    [callback callWithArguments:@[base64String]];
+  }
+}
+
+/** debug **/
+- (void)console:(NSString *)message
+{
+  NSLog(@"From JS: %@", message);
+}
+
+- (BOOL)pushControllerWithHash:(NSString *)htmlHash
+                controllerName:(NSString *)name
+{
+  if (self.responseDelegate &&
+      [self.responseDelegate respondsToSelector:@selector(pushControllerWithHash:controllerName:)]) {
+    return [self.responseDelegate pushControllerWithHash:htmlHash controllerName:name];
+  }
+  return NO;
 }
 
 @end
-

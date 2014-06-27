@@ -32,7 +32,15 @@ JSExportAs(registerHandler,
                            handler:(JSValue *)handler);
 
 JSExportAs(loadImage,
-           - (NSString *)base64StringForImageURL:(NSString *)imageURL
-                                       imageType:(NSString *)imageType);
+           - (void)loadImageWithURL:(NSString *)imageURL
+           callback:(JSValue *)callback);
+
+JSExportAs(console,
+           - (void)console:(NSString *)message);
+
+JSExportAs(pushController,
+           - (BOOL)pushControllerWithHash:(NSString *)htmlHash
+           controllerName:(NSString *)name);
+
 
 @end

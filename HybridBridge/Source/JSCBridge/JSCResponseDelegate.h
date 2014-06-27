@@ -12,4 +12,6 @@
 
 - (id)responseForEventType:(NSString *)eventType message:(NSString *)message;
 
+- (BOOL)pushControllerWithHash:(NSString *)htmlHash controllerName:(NSString *)name;
+
 @end
