@@ -2,26 +2,27 @@
 HybridBridge
 ================
 
-This library use JavaScriptCore framework to bridge the gap between Javascript and Objective-C in hybrid app development.
+This library provides a basic framework for iOS hybrid development.
 
 It provides:
 - Template resource(html/js/css) management.
-- send message from javascript to native, and callback after native responsed. 
- 
- The data flows: Javascript --> JavaScriptCore --> Native --> JavaScriptCore --> Javascript
+- Bridge for coding with JS and Objc, using JavaScriptCore.Framework.
+    - send message from JavaScript to native, and callback after native responsed. 
+    
+    The data flows: Javascript --> JavaScriptCore --> Native --> JavaScriptCore --> Javascript
 
-- Call javascript function in native, and callback after Javascript responsed. 
-
-  The data flows: Native --> JavaScriptCore --> JavaScript --> JavaScriptCore --> Native
-
-- Native send message to javascript, such as pushing notification.
+    - Call JavaScript function in native, and callback after Javascript responsed. 
+    
+    The data flows: Native --> JavaScriptCore --> JavaScript --> JavaScriptCore --> Native
+    
+    - Native send message to JavaScript, such as pushing notification.
 
 With this library, you can communicate your native codes with web codes easily.
 
 
 Hybrid Application
 -----------------
-Hybrid apps are part native apps, part web apps. Like native apps, they live in an app store and can take advantage of the many device features available. They rely on HTML being rendered in UIWebViews, so as to avoid publish new versions for some updates.
+Hybrid apps are part native apps, part web apps. Like native apps, they live in an app store and can take advantage of the many device features available. They rely on HTML being rendered in UIWebViews, so as to avoid publish new versions for some updates. More details in this [Blog]. 
 
 
 Installation
@@ -42,7 +43,7 @@ Inherite BridgeWebViewController for your custom controller
 ```
 
 And now you can communicate between js and objc.
-### JavaScript driven 
+#### JavaScript driven 
 
 There are two ways for JavaScript to drive to communication.
 
@@ -53,15 +54,7 @@ In your js code, you can use sendMessageAndCallback to send message from js to o
 bridge.sendMessageAndCallback(eventType, message, callbackFunction)
 ```
     
-- Post and receive messages
-
-```
-bridge.postMessage(eventType, message)   // post message to native
-// other codes here
-bridge.receiveMessage(eventType, callback)  //receive message from native
-``` 
-
-### Native driven
+#### Native driven
 On the other hand, native can call JavaScript codes. After you register handler in JavaScript, you can call this handler in native side now.
 
 JavaScript register handler:
@@ -78,7 +71,7 @@ Native call handler:
 }];
 ```
 
-### Notification
+#### Notification
 Native push notification:
 ```
 [self sendMessageToJSForKey:eventType value:messages];
@@ -88,12 +81,23 @@ JavaScript receive message:
 bridge.receiveMessage(eventType, callback) 
 ```
 
+#### Some Common Usage
+- Push ViewController. 
+```
+bridge.pushController(url, name)    
+```
+The name is used to route controller in navite end.
+
+- Get JSON:
+```
+bridge.getJSON(url, options, callback)
+```
 
 Template Resource management
 ---------------------------
 In hybrid app, in order to improve the performance, we always hold the template resources(html/js/css/img) locally. 
 
-Firstly, set your api base URL, and create initial resources for the first time in AppDelegate:
+Firstly, create initial resources for the first time in AppDelegate:
 
 ```
 #import "WebBridgeAPI.h"
@@ -101,7 +105,6 @@ Firstly, set your api base URL, and create initial resources for the first time 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // Override point for customization after application launch.
-  [WebBridgeAPI setAPIBaseURL:@"http://api.douban.com"];
 
   ResourceManager *manager = [ResourceManager sharedManager];
   [manager createInitialResource];
@@ -110,15 +113,8 @@ Firstly, set your api base URL, and create initial resources for the first time 
 ```
 
 Check resource update and download if needed:
-```
-[WebBridgeAPI hasResourceUpdateWithLocalVersion:[manager currentVersion]
-                                        success:^(VersionControl *versionControl) {
-                                            if (versionControl.hasUpdate) {
-                                              [manager downloadUpdatedResource:versionControl.versions];
-                                            }
-                                          } fail:NULL];
-```
-
 
 For more details, please check the example project.
+
+[Blog]:http://liaojinxing.github.io/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/
 
