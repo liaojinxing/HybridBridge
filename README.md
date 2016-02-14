@@ -28,7 +28,7 @@ Hybrid apps are part native apps, part web apps. Like native apps, they live in 
 Installation
 -------------------------
 - Grab the source file into your project. 
-- Or use cocoapods. Cocoapods is really great. Here is an example of your podfile:
+- Or use cocoapods. CocoaPods is really great. Here is an example of your podfile:
 
 ```
 pod 'HybridBridge'
