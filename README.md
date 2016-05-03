@@ -116,5 +116,12 @@ Check resource update and download if needed:
 
 For more details, please check the example project.
 
+Subscription
+-------
+欢迎关注[简书]，关注微信公众号(iOSers)，订阅高质量原创技术文章：
+
+<img src="http://upload-images.jianshu.io/upload_images/1859836-2f44998e2341e34d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公众号" width="300px" hspace="10"/>
+
 [Blog]:http://liaojinxing.github.io/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/
+[简书]:http://www.jianshu.com/users/25481f0294aa/latest_articles
 
